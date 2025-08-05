@@ -188,9 +188,8 @@ extraContainers: []
 
 # Deployment strategy type
 strategy:
-  type: RollingUpdate
-#  rollingUpdate:
-#    maxUnavailable: 25%
+  # Currently zot registry supports only one running instance due to metadb lock therefore Recreate strategy must be used
+  type: Recreate
 
 # Extra args to pass to the deployment's container
 extraArgs: []
